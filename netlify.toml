@@ -3,3 +3,4 @@
 [[redirects]]
   from = "/app/*"
   to = "https://app.hut1150.com/:splat"
+  status = 200
