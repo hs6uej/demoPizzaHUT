@@ -5,7 +5,7 @@ import axios from 'axios';
 // ** จุดแก้ไขหลัก **
 // ดึง URL มาจาก Environment Variable
 // ถ้าไม่เจอ (ตอน dev) ให้ใช้ '/app' เพื่อให้ proxy ทำงานเหมือนเดิม
-const BASE_URL = import.meta.env.VITE_API_URL || '/app';
+const BASE_URL = '/app';
 
 // Generate a random device ID if not stored already
 const getDeviceId = () => {
