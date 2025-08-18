@@ -2,5 +2,5 @@
 
 [[redirects]]
   from = "/app/*"
-  to = "https://app.hut1150.com/:splat"
+  to = "https://app.hut1150.com/app/:splat"
   status = 200
