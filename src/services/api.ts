@@ -1,5 +1,12 @@
+// src/services/api.ts
+
 import axios from 'axios';
-const BASE_URL = '/app';
+
+// ** จุดแก้ไขหลัก **
+// ดึง URL มาจาก Environment Variable
+// ถ้าไม่เจอ (ตอน dev) ให้ใช้ '/app' เพื่อให้ proxy ทำงานเหมือนเดิม
+const BASE_URL = import.meta.env.VITE_API_URL || '/app';
+
 // Generate a random device ID if not stored already
 const getDeviceId = () => {
   let deviceId = localStorage.getItem('pizza_hut_device_id');
@@ -12,13 +19,16 @@ const getDeviceId = () => {
   }
   return deviceId;
 };
+
 // Create axios instance
+// ตัวนี้จะใช้ BASE_URL ที่เรากำหนดไว้ข้างบนโดยอัตโนมัติ
 const api = axios.create({
   baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/json'
   }
 });
+
 // Add token to requests that need it
 api.interceptors.request.use(config => {
   const token = localStorage.getItem('pizza_hut_token');
@@ -27,10 +37,12 @@ api.interceptors.request.use(config => {
   }
   return config;
 }, error => Promise.reject(error));
+
 // Generate and store token
 export const generateToken = async () => {
   try {
     const deviceId = getDeviceId();
+    // ฟังก์ชันนี้ก็จะใช้ BASE_URL ที่เรากำหนดไว้ข้างบนโดยอัตโนมัติเช่นกัน
     const response = await axios.post(`${BASE_URL}/generate-token`, {
       client_id: 'phc-line-app',
       client_secret: 'Ee63Y6xp8yYhjAC',
@@ -46,6 +58,7 @@ export const generateToken = async () => {
     throw error;
   }
 };
+
 // Check and refresh token if needed
 export const ensureToken = async () => {
   const token = localStorage.getItem('pizza_hut_token');
@@ -54,4 +67,5 @@ export const ensureToken = async () => {
   }
   return token;
 };
+
 export default api;
