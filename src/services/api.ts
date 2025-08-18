@@ -2,16 +2,13 @@
 
 import axios from 'axios';
 
-// ** จุดแก้ไขหลัก **
-// ดึง URL มาจาก Environment Variable
-// ถ้าไม่เจอ (ตอน dev) ให้ใช้ '/app' เพื่อให้ proxy ทำงานเหมือนเดิม
+// บังคับให้ใช้ Proxy ที่เราตั้งค่าใน netlify.toml เสมอ
 const BASE_URL = '/app';
 
 // Generate a random device ID if not stored already
 const getDeviceId = () => {
   let deviceId = localStorage.getItem('pizza_hut_device_id');
   if (!deviceId) {
-    // Generate a UUID-like string
     deviceId = 'xxxxxxxx-xxxxxxxx-xxxxxxxx'.replace(/[x]/g, () => {
       return Math.floor(Math.random() * 16).toString(16).toUpperCase();
     });
@@ -21,7 +18,6 @@ const getDeviceId = () => {
 };
 
 // Create axios instance
-// ตัวนี้จะใช้ BASE_URL ที่เรากำหนดไว้ข้างบนโดยอัตโนมัติ
 const api = axios.create({
   baseURL: BASE_URL,
   headers: {
@@ -42,8 +38,8 @@ api.interceptors.request.use(config => {
 export const generateToken = async () => {
   try {
     const deviceId = getDeviceId();
-    // ฟังก์ชันนี้ก็จะใช้ BASE_URL ที่เรากำหนดไว้ข้างบนโดยอัตโนมัติเช่นกัน
-    const response = await axios.post(`${BASE_URL}/generate-token`, {
+    // ** แก้ไขจุดสำคัญ: ให้ใช้ `api.post` แทน `axios.post` เพื่อให้ใช้ baseURL และ interceptor ที่เราตั้งค่าไว้ **
+    const response = await api.post(`/generate-token`, {
       client_id: 'phc-line-app',
       client_secret: 'Ee63Y6xp8yYhjAC',
       device_id: deviceId

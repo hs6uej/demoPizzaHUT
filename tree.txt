@@ -1,9 +1,11 @@
 Folder PATH listing for volume New Volume
 Volume serial number is 4229-EE14
 D:.
+|   .env.production
 |   .eslintrc.cjs
 |   .gitignore
 |   index.html
+|   netlify.toml
 |   package-lock.json
 |   package.json
 |   postcss.config.js
@@ -15,6 +17,15 @@ D:.
 |   tsconfig.node.json
 |   vite.config.ts
 |   
++---dist
+|   |   image.png
+|   |   index.html
+|   |   pizza-hut-logo-png_seeklogo-479706.png
+|   |   
+|   \---assets
+|           index-CQdHMykJ.js
+|           index-DrkJDAeY.css
+|           
 +---node_modules
 |   |   .package-lock.json
 |   |   
@@ -37,6 +48,12 @@ D:.
 |   |       eslint
 |   |       eslint.cmd
 |   |       eslint.ps1
+|   |       gh-pages
+|   |       gh-pages-clean
+|   |       gh-pages-clean.cmd
+|   |       gh-pages-clean.ps1
+|   |       gh-pages.cmd
+|   |       gh-pages.ps1
 |   |       jiti
 |   |       jiti.cmd
 |   |       jiti.ps1
@@ -101,37 +118,19 @@ D:.
 |   |       yaml.cmd
 |   |       yaml.ps1
 |   |       
-|   +---.vite
-|   |   \---deps
-|   |           axios.js
-|   |           axios.js.map
-|   |           chunk-DRWLMN53.js
-|   |           chunk-DRWLMN53.js.map
-|   |           chunk-G3PMV62Z.js
-|   |           chunk-G3PMV62Z.js.map
-|   |           chunk-NB5MQSEJ.js
-|   |           chunk-NB5MQSEJ.js.map
-|   |           chunk-PJEEZAML.js
-|   |           chunk-PJEEZAML.js.map
-|   |           leaflet.js
-|   |           leaflet.js.map
-|   |           lucide-react.js
-|   |           lucide-react.js.map
-|   |           package.json
-|   |           react-dom.js
-|   |           react-dom.js.map
-|   |           react-leaflet.js
-|   |           react-leaflet.js.map
-|   |           react-router-dom.js
-|   |           react-router-dom.js.map
-|   |           react.js
-|   |           react.js.map
-|   |           react_jsx-dev-runtime.js
-|   |           react_jsx-dev-runtime.js.map
-|   |           react_jsx-runtime.js
-|   |           react_jsx-runtime.js.map
-|   |           _metadata.json
-|   |           
+|   +---.cache
+|   |   \---gh-pages
+|   |       \---https!github.com!hs6uej!demoPizzaHUT.git
+|   |           |   .eslintrc.cjs
+|   |           |   .gitignore
+|   |           |   image.png
+|   |           |   index.html
+|   |           |   pizza-hut-logo-png_seeklogo-479706.png
+|   |           |   
+|   |           \---assets
+|   |                   index-CQdHMykJ.js
+|   |                   index-DrkJDAeY.css
+|   |                   
 |   +---@alloc
 |   |   \---quick-lru
 |   |           index.d.ts
@@ -1689,7 +1688,19 @@ D:.
 |   |   |       package.json
 |   |   |       README.md
 |   |   |       
+|   |   +---geojson
+|   |   |       index.d.ts
+|   |   |       LICENSE
+|   |   |       package.json
+|   |   |       README.md
+|   |   |       
 |   |   +---json-schema
+|   |   |       index.d.ts
+|   |   |       LICENSE
+|   |   |       package.json
+|   |   |       README.md
+|   |   |       
+|   |   +---leaflet
 |   |   |       index.d.ts
 |   |   |       LICENSE
 |   |   |       package.json
@@ -3825,6 +3836,149 @@ D:.
 |   |       package.json
 |   |       readme.md
 |   |       
+|   +---async
+|   |   |   all.js
+|   |   |   allLimit.js
+|   |   |   allSeries.js
+|   |   |   any.js
+|   |   |   anyLimit.js
+|   |   |   anySeries.js
+|   |   |   apply.js
+|   |   |   applyEach.js
+|   |   |   applyEachSeries.js
+|   |   |   asyncify.js
+|   |   |   auto.js
+|   |   |   autoInject.js
+|   |   |   bower.json
+|   |   |   cargo.js
+|   |   |   cargoQueue.js
+|   |   |   CHANGELOG.md
+|   |   |   compose.js
+|   |   |   concat.js
+|   |   |   concatLimit.js
+|   |   |   concatSeries.js
+|   |   |   constant.js
+|   |   |   detect.js
+|   |   |   detectLimit.js
+|   |   |   detectSeries.js
+|   |   |   dir.js
+|   |   |   doDuring.js
+|   |   |   doUntil.js
+|   |   |   doWhilst.js
+|   |   |   during.js
+|   |   |   each.js
+|   |   |   eachLimit.js
+|   |   |   eachOf.js
+|   |   |   eachOfLimit.js
+|   |   |   eachOfSeries.js
+|   |   |   eachSeries.js
+|   |   |   ensureAsync.js
+|   |   |   every.js
+|   |   |   everyLimit.js
+|   |   |   everySeries.js
+|   |   |   filter.js
+|   |   |   filterLimit.js
+|   |   |   filterSeries.js
+|   |   |   find.js
+|   |   |   findLimit.js
+|   |   |   findSeries.js
+|   |   |   flatMap.js
+|   |   |   flatMapLimit.js
+|   |   |   flatMapSeries.js
+|   |   |   foldl.js
+|   |   |   foldr.js
+|   |   |   forEach.js
+|   |   |   forEachLimit.js
+|   |   |   forEachOf.js
+|   |   |   forEachOfLimit.js
+|   |   |   forEachOfSeries.js
+|   |   |   forEachSeries.js
+|   |   |   forever.js
+|   |   |   groupBy.js
+|   |   |   groupByLimit.js
+|   |   |   groupBySeries.js
+|   |   |   index.js
+|   |   |   inject.js
+|   |   |   LICENSE
+|   |   |   log.js
+|   |   |   map.js
+|   |   |   mapLimit.js
+|   |   |   mapSeries.js
+|   |   |   mapValues.js
+|   |   |   mapValuesLimit.js
+|   |   |   mapValuesSeries.js
+|   |   |   memoize.js
+|   |   |   nextTick.js
+|   |   |   package.json
+|   |   |   parallel.js
+|   |   |   parallelLimit.js
+|   |   |   priorityQueue.js
+|   |   |   queue.js
+|   |   |   race.js
+|   |   |   README.md
+|   |   |   reduce.js
+|   |   |   reduceRight.js
+|   |   |   reflect.js
+|   |   |   reflectAll.js
+|   |   |   reject.js
+|   |   |   rejectLimit.js
+|   |   |   rejectSeries.js
+|   |   |   retry.js
+|   |   |   retryable.js
+|   |   |   select.js
+|   |   |   selectLimit.js
+|   |   |   selectSeries.js
+|   |   |   seq.js
+|   |   |   series.js
+|   |   |   setImmediate.js
+|   |   |   some.js
+|   |   |   someLimit.js
+|   |   |   someSeries.js
+|   |   |   sortBy.js
+|   |   |   timeout.js
+|   |   |   times.js
+|   |   |   timesLimit.js
+|   |   |   timesSeries.js
+|   |   |   transform.js
+|   |   |   tryEach.js
+|   |   |   unmemoize.js
+|   |   |   until.js
+|   |   |   waterfall.js
+|   |   |   whilst.js
+|   |   |   wrapSync.js
+|   |   |   
+|   |   +---dist
+|   |   |       async.js
+|   |   |       async.min.js
+|   |   |       async.mjs
+|   |   |       
+|   |   \---internal
+|   |           applyEach.js
+|   |           asyncEachOfLimit.js
+|   |           awaitify.js
+|   |           breakLoop.js
+|   |           consoleFunc.js
+|   |           createTester.js
+|   |           DoublyLinkedList.js
+|   |           eachOfLimit.js
+|   |           filter.js
+|   |           getIterator.js
+|   |           Heap.js
+|   |           initialParams.js
+|   |           isArrayLike.js
+|   |           iterator.js
+|   |           map.js
+|   |           once.js
+|   |           onlyOnce.js
+|   |           parallel.js
+|   |           promiseCallback.js
+|   |           queue.js
+|   |           range.js
+|   |           reject.js
+|   |           setImmediate.js
+|   |           withoutIndex.js
+|   |           wrapAsync.js
+|   |           
 |   +---asynckit
 |   |   |   bench.js
 |   |   |   index.js
@@ -5074,6 +5228,18 @@ D:.
 |   |   \---typings
 |   |           index.d.ts
 |   |           
+|   +---commondir
+|   |   |   index.js
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   readme.markdown
+|   |   |   
+|   |   +---example
+|   |   |       dir.js
+|   |   |       
+|   |   \---test
+|   |           dirs.js
+|   |           
 |   +---concat-map
 |   |   |   .travis.yml
 |   |   |   index.js
@@ -5242,6 +5408,24 @@ D:.
 |   |       versions.js
 |   |       versions.json
 |   |       
+|   +---email-addresses
+|   |   |   .travis.yml
+|   |   |   bower.json
+|   |   |   Changes.md
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   +---lib
+|   |   |       email-addresses.d.ts
+|   |   |       email-addresses.js
+|   |   |       email-addresses.min.js
+|   |   |       
+|   |   \---test
+|   |           email-addresses.js
+|   |           is_email.js
+|   |           tests.xml
+|   |           
 |   +---emoji-regex
 |   |   |   index.d.ts
 |   |   |   index.js
@@ -6140,11 +6324,34 @@ D:.
 |   |       package.json
 |   |       README.md
 |   |       
+|   +---filename-reserved-regex
+|   |       index.js
+|   |       license
+|   |       package.json
+|   |       readme.md
+|   |       
+|   +---filenamify
+|   |       filenamify-path.d.ts
+|   |       filenamify-path.js
+|   |       filenamify.d.ts
+|   |       filenamify.js
+|   |       index.d.ts
+|   |       index.js
+|   |       license
+|   |       package.json
+|   |       readme.md
+|   |       
 |   +---fill-range
 |   |       index.js
 |   |       LICENSE
 |   |       package.json
 |   |       README.md
+|   |       
+|   +---find-cache-dir
+|   |       index.js
+|   |       license
+|   |       package.json
+|   |       readme.md
 |   |       
 |   +---find-up
 |   |       index.d.ts
@@ -6264,6 +6471,63 @@ D:.
 |   |       package.json
 |   |       README.md
 |   |       
+|   +---fs-extra
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   \---lib
+|   |       |   esm.mjs
+|   |       |   index.js
+|   |       |   
+|   |       +---copy
+|   |       |       copy-sync.js
+|   |       |       copy.js
+|   |       |       index.js
+|   |       |       
+|   |       +---empty
+|   |       |       index.js
+|   |       |       
+|   |       +---ensure
+|   |       |       file.js
+|   |       |       index.js
+|   |       |       link.js
+|   |       |       symlink-paths.js
+|   |       |       symlink-type.js
+|   |       |       symlink.js
+|   |       |       
+|   |       +---fs
+|   |       |       index.js
+|   |       |       
+|   |       +---json
+|   |       |       index.js
+|   |       |       jsonfile.js
+|   |       |       output-json-sync.js
+|   |       |       output-json.js
+|   |       |       
+|   |       +---mkdirs
+|   |       |       index.js
+|   |       |       make-dir.js
+|   |       |       utils.js
+|   |       |       
+|   |       +---move
+|   |       |       index.js
+|   |       |       move-sync.js
+|   |       |       move.js
+|   |       |       
+|   |       +---output-file
+|   |       |       index.js
+|   |       |       
+|   |       +---path-exists
+|   |       |       index.js
+|   |       |       
+|   |       +---remove
+|   |       |       index.js
+|   |       |       
+|   |       \---util
+|   |               stat.js
+|   |               utimes.js
+|   |               
 |   +---fs.realpath
 |   |       index.js
 |   |       LICENSE
@@ -6336,6 +6600,41 @@ D:.
 |   |   \---test
 |   |           index.js
 |   |           
+|   +---gh-pages
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   readme.md
+|   |   |   
+|   |   +---bin
+|   |   |       gh-pages-clean.js
+|   |   |       gh-pages.js
+|   |   |       
+|   |   +---lib
+|   |   |       git.js
+|   |   |       index.js
+|   |   |       util.js
+|   |   |       
+|   |   \---node_modules
+|   |       \---commander
+|   |           |   esm.mjs
+|   |           |   index.js
+|   |           |   LICENSE
+|   |           |   package-support.json
+|   |           |   package.json
+|   |           |   Readme.md
+|   |           |   
+|   |           +---lib
+|   |           |       argument.js
+|   |           |       command.js
+|   |           |       error.js
+|   |           |       help.js
+|   |           |       option.js
+|   |           |       suggestSimilar.js
+|   |           |       
+|   |           \---typings
+|   |                   esm.d.mts
+|   |                   index.d.ts
+|   |                   
 |   +---glob
 |   |       common.js
 |   |       glob.js
@@ -6385,6 +6684,15 @@ D:.
 |   |   \---test
 |   |           index.js
 |   |           
+|   +---graceful-fs
+|   |       clone.js
+|   |       graceful-fs.js
+|   |       legacy-streams.js
+|   |       LICENSE
+|   |       package.json
+|   |       polyfills.js
+|   |       README.md
+|   |       
 |   +---graphemer
 |   |   |   CHANGELOG.md
 |   |   |   LICENSE
@@ -6764,6 +7072,13 @@ D:.
 |   |           util.d.ts
 |   |           util.js
 |   |           
+|   +---jsonfile
+|   |       index.js
+|   |       LICENSE
+|   |       package.json
+|   |       README.md
+|   |       utils.js
+|   |       
 |   +---keyv
 |   |   |   package.json
 |   |   |   README.md
@@ -10467,6 +10782,29 @@ D:.
 |   |               lucide-react.min.js
 |   |               lucide-react.min.js.map
 |   |               
+|   +---make-dir
+|   |   |   index.d.ts
+|   |   |   index.js
+|   |   |   license
+|   |   |   package.json
+|   |   |   readme.md
+|   |   |   
+|   |   \---node_modules
+|   |       +---.bin
+|   |       |       semver
+|   |       |       semver.cmd
+|   |       |       semver.ps1
+|   |       |       
+|   |       \---semver
+|   |           |   LICENSE
+|   |           |   package.json
+|   |           |   range.bnf
+|   |           |   README.md
+|   |           |   semver.js
+|   |           |   
+|   |           \---bin
+|   |                   semver.js
+|   |                   
 |   +---math-intrinsics
 |   |   |   .eslintrc
 |   |   |   abs.d.ts
@@ -10700,6 +11038,13 @@ D:.
 |   |       package.json
 |   |       readme.md
 |   |       
+|   +---p-try
+|   |       index.d.ts
+|   |       index.js
+|   |       license
+|   |       package.json
+|   |       readme.md
+|   |       
 |   +---package-json-from-dist
 |   |   |   LICENSE.md
 |   |   |   package.json
@@ -10842,6 +11187,42 @@ D:.
 |   |   \---lib
 |   |           index.js
 |   |           
+|   +---pkg-dir
+|   |   |   index.d.ts
+|   |   |   index.js
+|   |   |   license
+|   |   |   package.json
+|   |   |   readme.md
+|   |   |   
+|   |   \---node_modules
+|   |       +---find-up
+|   |       |       index.d.ts
+|   |       |       index.js
+|   |       |       license
+|   |       |       package.json
+|   |       |       readme.md
+|   |       |       
+|   |       +---locate-path
+|   |       |       index.d.ts
+|   |       |       index.js
+|   |       |       license
+|   |       |       package.json
+|   |       |       readme.md
+|   |       |       
+|   |       +---p-limit
+|   |       |       index.d.ts
+|   |       |       index.js
+|   |       |       license
+|   |       |       package.json
+|   |       |       readme.md
+|   |       |       
+|   |       \---p-locate
+|   |               index.d.ts
+|   |               index.js
+|   |               license
+|   |               package.json
+|   |               readme.md
+|   |               
 |   +---postcss
 |   |   |   LICENSE
 |   |   |   package.json
@@ -11747,6 +12128,19 @@ D:.
 |   |       package.json
 |   |       readme.md
 |   |       
+|   +---strip-outer
+|   |   |   index.js
+|   |   |   license
+|   |   |   package.json
+|   |   |   readme.md
+|   |   |   
+|   |   \---node_modules
+|   |       \---escape-string-regexp
+|   |               index.js
+|   |               license
+|   |               package.json
+|   |               readme.md
+|   |               
 |   +---sucrase
 |   |   |   LICENSE
 |   |   |   package.json
@@ -12523,6 +12917,19 @@ D:.
 |   |       package.json
 |   |       README.md
 |   |       
+|   +---trim-repeated
+|   |   |   index.js
+|   |   |   license
+|   |   |   package.json
+|   |   |   readme.md
+|   |   |   
+|   |   \---node_modules
+|   |       \---escape-string-regexp
+|   |               index.js
+|   |               license
+|   |               package.json
+|   |               readme.md
+|   |               
 |   +---ts-interface-checker
 |   |   |   LICENSE
 |   |   |   package.json
@@ -12915,6 +13322,12 @@ D:.
 |   |       util.d.ts
 |   |       webidl.d.ts
 |   |       websocket.d.ts
+|   |       
+|   +---universalify
+|   |       index.js
+|   |       LICENSE
+|   |       package.json
+|   |       README.md
 |   |       
 |   +---update-browserslist-db
 |   |       check-npm-version.js
@@ -13410,6 +13823,7 @@ D:.
 |           
 +---public
 |       image.png
+|       pizza-hut-logo-png_seeklogo-479706.png
 |       
 \---src
     |   App.tsx
@@ -13420,13 +13834,16 @@ D:.
     +---components
     |       Header.tsx
     |       PrimaryButton.tsx
+    |       StatusBarClock.tsx
     |       
     +---context
     |       ApiContext.tsx
+    |       CartContext.tsx
     |       
     +---pages
     |       AddressSelectionScreen.tsx
     |       CartScreen.tsx
+    |       ChatScreen.tsx
     |       DeliveryTypeScreen.tsx
     |       LoginScreen.tsx
     |       MenuScreen.tsx
